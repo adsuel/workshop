@@ -47,6 +47,6 @@ resource "azurerm_linux_web_app" "example" {
 }
 resource "null_resource" "zip_pong" {
   provisioner "local-exec" {
-    command = "cp pong.html index.html && zip -j pong.zip index.html"
+    command = "zip -j pong.zip app.py requirements.txt startup.txt"
   }
 }
