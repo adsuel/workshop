@@ -43,9 +43,10 @@ resource "azurerm_linux_web_app" "example" {
         --src pong.zip
     EOT
   }
+  depends_on = [null_resource.zip_pong]
 }
 resource "null_resource" "zip_pong" {
   provisioner "local-exec" {
-    command = "zip -j pong.zip pong.html"
+    command = "cp pong.html index.html && zip -j pong.zip index.html"
   }
 }
