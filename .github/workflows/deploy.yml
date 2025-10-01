@@ -35,7 +35,7 @@ jobs:
       - name: Push Docker Image to ACR
         run: |
           docker push ${{ secrets.ACR_LOGIN_SERVER }}/example-webapp:latest
-          
+
   deploy-infra:
     name: Deploy Infrastructure
     runs-on: ubuntu-latest
